@@ -1,0 +1,1 @@
+{"version":3,"sources":["../PraiseButton.js"],"names":["PraiseButton","count"],"mappings":";;;;;;;;;;IAAqBA,Y;AACnB,0BAAc;AAAA;;AACZ,SAAKC,KAAL,GAAa,CAAb;AACD;;;;+BACU;AACT,WAAKA,KAAL;AACD;;;;;;kBANkBD,Y","file":"PraiseButton.js","sourcesContent":["export default class PraiseButton {\n  constructor() {\n    this.count = 0;\n  }\n  increase() {\n    this.count ++;\n  }\n}\n"]}

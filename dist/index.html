@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Thunmb Button</title>
+  <link rel="stylesheet" href="./main-min.css">
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>  
+</head>
+<body>
+  <div class="container">
+    <div class="praise-hand">
+      <div class="sleeve">
+      <div class="sleeve-left"></div>
+      <div class="sleeve-right"></div>
+    </div>
+    <div class="hand" id="J_Hand">
+      <div class="wist"></div>
+      <div class="fist"></div>
+      <div class="finger">
+        <span class="finger-line"></span>
+        <span class="finger-line"></span>
+        <span class="finger-line"></span>
+      </div>
+      <div class="thumb"></div>
+    </div> 
+    </div>
+  </div>
+  <script src="./system.js"></script>
+  <script>
+    SystemJS.import('./index.js');
+
+    $.fn.extend({
+      praiseBtnInit: function() {
+        SystemJS.import('./index.js');
+      }
+    })
+  </script>
+</body>
+</html>
+
