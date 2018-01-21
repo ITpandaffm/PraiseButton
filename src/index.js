@@ -1,10 +1,4 @@
-import PraiseButton from './PraiseButton.js';
-import Thumb from './Thumb.js';
+import Thumb from './thumb.js';
 
-const hand = document.getElementById('J_Hand');
-
-let thumb = new Thumb();
-hand.addEventListener('click', () => {
-  thumb.handleClickOnThumb();
-})
-
+let q = new Thumb(0, $('#J_Hand'));
+q.setHandleClick()

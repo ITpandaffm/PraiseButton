@@ -1,28 +1,31 @@
-import PraiseButton from './PraiseButton.js';
-
-export default class Thumb extends PraiseButton {
-  constructor() {
-    super();
-    console.log('Thumb init! count: ', this.count);
+class PraiseButton {
+  constructor(count, element) {
+    this.count = count;
+    this.element = element;
   }
-  handleClickOnThumb() {
-    if (10 <= this.count ) { 
-      this._resetCount();
-      this._disableBtn();
-    } else {  
-      this.increase(this.count);
-    }
-    console.log('thumb count: ',this.count);
-  }
-  _resetCount() {
-    this.count = 0;
-  }
-  _disableBtn() {
-    const wist = document.querySelectorAll('.wist')[0];
-    const fist = document.querySelectorAll('.fist')[0];
-    const thumb = document.querySelectorAll('.thumb')[0];
-    [wist, fist, thumb].map((item) => {
-      item.style.background = '#ccc'
+  setHandleClick() {
+    this.element.click(() => {
+      if(this.count < 10) {
+        this.element.css('filter', 'grayscale(0)');
+        //+1动画效果
+        $('#J_AddOneLabel').addClass('active');
+        this.count = add(this.count);
+        setTimeout(function () {
+          $('#J_AddOneLabel').removeClass('active');
+        }, 1000);
+      } else {
+        this.element.css('filter', 'grayscale(1)');
+        this.count = 0;
+      }
+      console.log(this.count);
     })
   }
 }
+
+class Thumb extends PraiseButton {
+  constructor (count, element) {
+    super(count, element);
+  }
+}
+
+export default Thumb;
